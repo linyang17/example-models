@@ -7,7 +7,7 @@ data {
 transformed data {
   // interaction
   vector[N] inter = treatment .* pre_test;
-  matrix[N,3] x = [treatment', pre_test', inter']';
+  matrix[N, 3] x = [treatment', pre_test', inter']';
 }
 parameters {
   real alpha;
@@ -17,3 +17,4 @@ parameters {
 model {
   post_test ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

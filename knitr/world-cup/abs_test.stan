@@ -11,3 +11,4 @@ parameters {
 model {
   y ~ normal(theta, 1);
 }
+

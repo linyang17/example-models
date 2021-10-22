@@ -4,9 +4,10 @@ data {
   vector[N] height;
   vector[N] male;
 }
-transformed data {           // log transformation
+transformed data {
+  // log transformation
   vector[N] log_earn = log(earn);
-  matrix[N,2] x = [height', male']';
+  matrix[N, 2] x = [height', male']';
 }
 parameters {
   real alpha;
@@ -16,3 +17,4 @@ parameters {
 model {
   log_earn ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

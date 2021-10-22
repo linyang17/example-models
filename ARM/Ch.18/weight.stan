@@ -3,7 +3,8 @@ data {
   vector[N] weight;
   vector[N] height;
 }
-transformed data {           // centering height
+transformed data {
+  // centering height
   vector[N] c_height;
   c_height = height - mean(height);
 }
@@ -15,3 +16,4 @@ parameters {
 model {
   weight ~ normal(a + b * c_height, sigma);
 }
+

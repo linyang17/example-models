@@ -4,7 +4,7 @@ data {
   vector[N] treatment;
 }
 transformed data {
-  matrix[N,1] x = [treatment']';
+  matrix[N, 1] x = [treatment']';
 }
 parameters {
   real alpha;
@@ -14,3 +14,4 @@ parameters {
 model {
   post_test ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

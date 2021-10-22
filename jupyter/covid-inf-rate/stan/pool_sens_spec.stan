@@ -12,9 +12,9 @@ data {
   int n_sens;
 }
 parameters {
-  real<lower = 0, upper = 1> p;
-  real<lower = 0, upper = 1> spec;
-  real<lower = 0, upper = 1> sens;
+  real<lower=0, upper=1> p;
+  real<lower=0, upper=1> spec;
+  real<lower=0, upper=1> sens;
 }
 model {
   real p_sample;
@@ -23,3 +23,4 @@ model {
   y_spec ~ binomial(n_spec, spec);
   y_sens ~ binomial(n_sens, sens);
 }
+

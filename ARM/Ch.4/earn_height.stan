@@ -4,7 +4,7 @@ data {
   vector[N] height;
 }
 transformed data {
-  matrix[N,1] x = [height']';
+  matrix[N, 1] x = [height']';
 }
 parameters {
   real alpha;
@@ -14,3 +14,4 @@ parameters {
 model {
   earn ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

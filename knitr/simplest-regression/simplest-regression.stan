@@ -11,3 +11,4 @@ parameters {
 model {
   y ~ normal(a + b * x, sigma);
 }
+

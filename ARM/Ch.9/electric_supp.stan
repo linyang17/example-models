@@ -5,7 +5,7 @@ data {
   vector[N] pre_test;
 }
 transformed data {
-  matrix[N,2] x = [supp', pre_test']';
+  matrix[N, 2] x = [supp', pre_test']';
 }
 parameters {
   real alpha;
@@ -15,3 +15,4 @@ parameters {
 model {
   post_test ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

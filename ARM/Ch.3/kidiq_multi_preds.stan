@@ -16,3 +16,4 @@ model {
   sigma ~ cauchy(0, 2.5);
   kid_score ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

@@ -11,7 +11,7 @@ transformed data {
   vector[N] z_height = (height - mean(height)) / sd(height);
   // interaction
   vector[N] inter = z_height .* male;
-  matrix[N,3] x = [z_height', male', inter']';
+  matrix[N, 3] x = [z_height', male', inter']';
 }
 parameters {
   real alpha;
@@ -21,3 +21,4 @@ parameters {
 model {
   log_earn ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

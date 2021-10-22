@@ -5,7 +5,7 @@ data {
   vector<lower=0, upper=200>[N] afqt;
 }
 transformed data {
-  matrix[N,2] x = [hs', afqt']';
+  matrix[N, 2] x = [hs', afqt']';
 }
 parameters {
   real alpha;
@@ -16,3 +16,4 @@ model {
   sigma ~ cauchy(0, 2.5);
   ppvt ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

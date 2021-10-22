@@ -16,7 +16,7 @@ transformed data {
   c_height = height - mean(height);
   i = 1;
   j = 1;
-  for (n in 1:N) {
+  for (n in 1 : N) {
     if (weight[n] == C) {
       c_height_cens[i] = c_height[n];
       i = i + 1;
@@ -37,3 +37,4 @@ model {
   weight_obs ~ normal(a + b * c_height_obs, sigma);
   weight_cens ~ normal(a + b * c_height_cens, sigma);
 }
+

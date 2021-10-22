@@ -7,3 +7,4 @@ parameters {
 model {
   y ~ normal(mu, 1);
 }
+

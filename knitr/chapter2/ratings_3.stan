@@ -3,8 +3,8 @@ data {
   vector[N] y;
   int J;
   int K;
-  int<lower=1, upper=J> movie[N];
-  int<lower=1, upper=K> rater[N];
+  array[N] int<lower=1, upper=J> movie;
+  array[N] int<lower=1, upper=K> rater;
 }
 parameters {
   vector[J] alpha;
@@ -23,3 +23,4 @@ model {
   alpha ~ normal(0, 1);
   beta ~ normal(0, 1);
 }
+

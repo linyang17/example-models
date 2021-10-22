@@ -8,7 +8,7 @@ data {
 transformed data {
   vector[N] log_weight = log(weight);
   vector[N] log_canopy_volume = log(diam1 .* diam2 .* canopy_height);
-  matrix[N,1] x = [log_canopy_volume']';
+  matrix[N, 1] x = [log_canopy_volume']';
 }
 parameters {
   real alpha;
@@ -18,3 +18,4 @@ parameters {
 model {
   log_weight ~ normal_id_glm(x, alpha, beta, sigma);
 }
+

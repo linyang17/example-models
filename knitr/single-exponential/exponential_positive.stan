@@ -9,8 +9,9 @@ parameters {
   real<lower=0> sigma;
 }
 model {
-  y ~ normal(a*exp(-b*x), sigma);
+  y ~ normal(a * exp(-b * x), sigma);
   a ~ normal(0, 10);
   b ~ normal(0, 10);
   sigma ~ normal(0, 10);
 }
+
